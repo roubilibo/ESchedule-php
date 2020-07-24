@@ -40,3 +40,13 @@ function hapusKeahlian($id_keahlian)
     // mengalihkan halaman kembali ke index.php
     // header("location:admin-keahlian.php");
 }
+function tampilNamakeahlian()
+{
+    global $conn;
+    $query = "SELECT * FROM tbl_keahlian";
+    $res   = mysqli_query($conn, $query);
+
+    $row   = mysqli_fetch_assoc($res);
+
+    return $row;
+}

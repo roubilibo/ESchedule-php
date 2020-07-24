@@ -1,3 +1,6 @@
+<?php
+include 'fungsi/config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,8 +28,7 @@
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
         <div class="container">
             <a class="navbar-brand" href="index.php">ESchedule</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -35,8 +37,7 @@
                         <a class="nav-link" href="index.php">Index <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--1" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Manage </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage </a>
                         <div class="dropdown-menu" aria-labelledby="dropdown--1">
                             <a href="admin-kampus.php" class="dropdown-item">Kampus</a>
                             <a href="admin-keahlian.php" class="dropdown-item">Keahlian</a>
@@ -49,8 +50,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="dropdown--2" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false"><i class="fas fa-clipboard-list"></i>Laporan</a>
+                        <a href="#" class="nav-link dropdown-toggle" id="dropdown--2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-clipboard-list"></i>Laporan</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown--2">
                             <a href="admin-harian.php" class="dropdown-item">Harian</a>
                             <a href="admin-bulanan.php" class="dropdown-item">Bulanan</a>
@@ -63,8 +63,7 @@
                         <a href="register.php" class="nav-link">Register</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--3" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Admin</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown--3">
                             <a href="profile.php" class="dropdown-item">Profile</a>
                             <a href="#" class="dropdown-item">Logout</a>
@@ -84,8 +83,7 @@
                         <div class="float-right">
                             <form action="#">
                                 <div class="input-group">
-                                    <input type="text" name="keyword" class="form-control form-control-sm text-center"
-                                        placeholder="Cari">
+                                    <input type="text" name="keyword" class="form-control form-control-sm text-center" placeholder="Cari">
                                     <div class="input-group-append">
                                         <button class="btn btn-info btn-sm" type="submit">
                                             <i class="fas fa-search"></i>
@@ -104,70 +102,37 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Nama Mahasiswa</th>
-                                    <th scope="col">Nama Keahlian</th>
+                                    <th scope="col">Keahlian</th>
                                     <th scope="col">Nilai</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>M. Roubil Ridlo</td>
-                                    <td>Front End</td>
-                                    <td>100</td>
-                                    <td>
-                                        <form action="#">
+                            <?php
+                            $no = 1;
+                            $data = tampilKmahasiswa();
+                            ksort($data);
+                            foreach ($data as $row) : ?>
+                                <tbody>
+                                    <tr>
+                                        <td><?= $no++; ?></td>
+                                        <td><?= $row['nama_lengkapmahasiswa']; ?></td>
+                                        <td><?= $row['nama_keahlian']; ?></td>
+                                        <td><?= $row['nilai']; ?></td>
+                                        <td>
                                             <a href="#">
                                                 <button class="btn btn-sm">
                                                     <i class="fas fa-edit text-info"></i>
                                                 </button>
                                             </a>
-                                            <button class="btn btn-sm" type="submit"
-                                                onclick="return confirm('Are You Sure?')">
-                                                <i class="fas fa-trash text-danger"></i>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>M. Roubil Ridlo</td>
-                                    <td>Front End</td>
-                                    <td>100</td>
-                                    <td>
-                                        <form action="#">
                                             <a href="#">
-                                                <button class="btn btn-sm">
-                                                    <i class="fas fa-edit text-info"></i>
+                                                <button class="btn btn-sm" type="submit" onclick="return confirm('Are You Sure?')">
+                                                    <i class="fas fa-trash text-danger"></i>
                                                 </button>
                                             </a>
-                                            <button class="btn btn-sm" type="submit"
-                                                onclick="return confirm('Are You Sure?')">
-                                                <i class="fas fa-trash text-danger"></i>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>M. Roubil Ridlo</td>
-                                    <td>Front End</td>
-                                    <td>100</td>
-                                    <td>
-                                        <form action="#">
-                                            <a href="#">
-                                                <button class="btn btn-sm">
-                                                    <i class="fas fa-edit text-info"></i>
-                                                </button>
-                                            </a>
-                                            <button class="btn btn-sm" type="submit"
-                                                onclick="return confirm('Are You Sure?')">
-                                                <i class="fas fa-trash text-danger"></i>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            </tbody>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            <?php endforeach; ?>
                         </table>
                     </div>
                 </div>

@@ -1,3 +1,5 @@
+<?php
+include 'fungsi/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,8 +27,7 @@
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
         <div class="container">
             <a class="navbar-brand" href="index.php">ESchedule</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -35,8 +36,7 @@
                         <a class="nav-link" href="index.php">Index <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--1" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Manage </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage </a>
                         <div class="dropdown-menu" aria-labelledby="dropdown--1">
                             <a href="admin-kampus.php" class="dropdown-item">Kampus</a>
                             <a href="admin-keahlian.php" class="dropdown-item">Keahlian</a>
@@ -49,8 +49,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="dropdown--2" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false"><i class="fas fa-clipboard-list"></i>Laporan</a>
+                        <a href="#" class="nav-link dropdown-toggle" id="dropdown--2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-clipboard-list"></i>Laporan</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown--2">
                             <a href="admin-harian.php" class="dropdown-item">Harian</a>
                             <a href="admin-bulanan.php" class="dropdown-item">Bulanan</a>
@@ -63,8 +62,7 @@
                         <a href="register.php" class="nav-link">Register</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--3" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Admin</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown--3">
                             <a href="profile.php" class="dropdown-item">Profile</a>
                             <a href="#" class="dropdown-item">Logout</a>
@@ -82,8 +80,7 @@
                     <span><strong>Semua Mahasiswa Terdaftar </strong></span>
                     <a href="admin-mahasiswa-form.php" class="btn btn-sm btn-secondary">Tambah</a>
                     <span class="float-right">
-                        Urutkan Waktu <a href="#" class="badge badge-primary">Terbaru</a> | <a href="#"
-                            class="badge badge-primary">Terlama</a>
+                        Urutkan Waktu <a href="#" class="badge badge-primary">Terbaru</a> | <a href="#" class="badge badge-primary">Terlama</a>
                     </span>
                 </div>
                 <div class="card-body">
@@ -95,96 +92,40 @@
                                 <th>Nama Mahasiswa</th>
                                 <th>Kampus</th>
                                 <th>Keahlian</th>
+                                <th>Kelompok</th>
                                 <th>Masuk</th>
-                                <th>Keluar</th>
+                                <th>Nilai</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <a href="mahasiswa-detail.php"><strong>1</strong></a>
-                                </td>
-                                <td>#</td>
-                                <td>M. Roubil Ridlo</td>
-                                <td>UIN Malang </td>
-                                <td>Front End</td>
-                                <td>1 juli 2020</td>
-                                <td>31 juli 2020</td>
-                                <td>
-                                    <form action="#">
-                                        <a href="#">
-                                            <button class="btn btn-sm" type="submit"
-                                                onclick="return confirm('Are You Sure?')">
-                                                <i class="fas fa-trash text-danger"></i>
-                                            </button>
-                                        </a>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="mahasiswa-detail.php"><strong>2</strong></a>
-                                </td>
-                                <td>#</td>
-                                <td>M. Roubil Ridlo</td>
-                                <td>UIN Malang </td>
-                                <td>Front End</td>
-                                <td>1 juli 2020</td>
-                                <td>31 juli 2020</td>
-                                <td>
-                                    <form action="#">
-                                        <a href="#">
-                                            <button class="btn btn-sm" type="submit"
-                                                onclick="return confirm('Are You Sure?')">
-                                                <i class="fas fa-trash text-danger"></i>
-                                            </button>
-                                        </a>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="mahasiswa-detail.php"><strong>3</strong></a>
-                                </td>
-                                <td>#</td>
-                                <td>M. Roubil Ridlo</td>
-                                <td>UIN Malang </td>
-                                <td>Front End</td>
-                                <td>1 juli 2020</td>
-                                <td>31 juli 2020</td>
-                                <td>
-                                    <form action="#">
-                                        <a href="#">
-                                            <button class="btn btn-sm" type="submit"
-                                                onclick="return confirm('Are You Sure?')">
-                                                <i class="fas fa-trash text-danger"></i>
-                                            </button>
-                                        </a>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="mahasiswa-detail.php"><strong>4</strong></a>
-                                </td>
-                                <td>#</td>
-                                <td>M. Roubil Ridlo</td>
-                                <td>UIN Malang </td>
-                                <td>Front End</td>
-                                <td>1 juli 2020</td>
-                                <td>31 juli 2020</td>
-                                <td>
-                                    <form action="#">
-                                        <a href="#">
-                                            <button class="btn btn-sm" type="submit"
-                                                onclick="return confirm('Are You Sure?')">
-                                                <i class="fas fa-trash text-danger"></i>
-                                            </button>
-                                        </a>
-                                    </form>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <?php
+                        $no = 1;
+                        $data = tampilMahasiswa();
+                        ksort($data);
+                        foreach ($data as $row) : ?>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href=""><strong><?= $no++; ?></strong></a>
+                                    </td>
+                                    <td><?= $row['id_mahasiswa']; ?></td>
+                                    <td><?= $row['nama_lengkapmahasiswa']; ?></td>
+                                    <td><?= $row['nama_kampus']; ?></td>
+                                    <td><?= $row['nama_keahlian']; ?></td>
+                                    <td><?= $row['nama_kelompok']; ?></td>
+                                    <td><?= $row['tgl_mulai']; ?></td>
+                                    <td><?= $row['nilai']; ?></td>
+                                    <td>
+                                        <form action="#">
+                                            <a href="#">
+                                                <button class="btn btn-sm" type="submit" onclick="return confirm('Are You Sure?')">
+                                                    <i class="fas fa-trash text-danger"></i>
+                                                </button>
+                                            </a>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        <?php endforeach; ?>
                     </table>
                 </div>
             </div>
