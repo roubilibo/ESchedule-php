@@ -79,6 +79,9 @@ include 'fungsi/config.php';
                 <div class="card">
                     <div class="card-header">
                         <span>Tambah Keahlian</span>
+                        <div class="float-right">
+                            <a href="admin-keahlian.php" class="btn btn-sm btn-info">Kembali</a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <form method="POST">

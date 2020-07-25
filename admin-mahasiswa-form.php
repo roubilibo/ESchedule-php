@@ -78,7 +78,10 @@ include 'fungsi/config.php';
             <div class="col-md-8 mx-auto">
                 <div class="card">
                     <div class="card-header">
-                        Register
+                        Tambah Mahasiswa
+                        <div class="float-right">
+                            <a href="index.php" class="btn btn-sm btn-info">Kembali</a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <form action="">
@@ -97,7 +100,7 @@ include 'fungsi/config.php';
                             </div>
                             <div class="form-group">
                                 <label for="">Nama Kampus</label>
-                                <select name="idkampus" id="" class="form-control">
+                                <select name="id_kampus" id="" class="form-control">
                                     <?php
                                     $no = 1;
                                     $data = tampilKampus();
@@ -153,7 +156,7 @@ include 'fungsi/config.php';
                                 <input type="file" name="cv" required>
                                 <small class="form-text text-danger"></small>
                             </div>
-                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
                         </form>
                     </div>
                 </div>

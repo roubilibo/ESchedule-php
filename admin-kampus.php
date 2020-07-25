@@ -79,21 +79,8 @@ include 'fungsi/config.php';
                 <div class="card">
                     <div class="card-header">
                         <span>Kategori</span>
-                        <a href="admin-kampus-form.php" class="btn btn-sm btn-secondary">Tambah</a>
                         <div class="float-right">
-                            <form action="#">
-                                <div class="input-group">
-                                    <input type="text" name="keyword" class="form-control form-control-sm text-center" placeholder="Cari">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-info btn-sm" type="submit">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                        <a href="#" class="btn btn-info btn-sm">
-                                            <i class="fas fa-eraser"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </form>
+                            <a href="admin-kampus-form.php" class="btn btn-sm btn-info">Tambah</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -101,7 +88,6 @@ include 'fungsi/config.php';
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">ID</th>
                                     <th scope="col">Nama Kampus</th>
                                     <th scope="col">Kota Kampus</th>
                                     <th scope="col"></th>
@@ -114,8 +100,7 @@ include 'fungsi/config.php';
                             foreach ($data as $row) : ?>
                                 <tbody>
                                     <tr>
-                                        <td><?= $no++; ?></td>
-                                        <td><?= $row['id_kampus']; ?></td>
+                                        <td><strong><?= $no++; ?></strong></td>
                                         <td><?= $row['nama_kampus']; ?></td>
                                         <td><?= $row['kota_kampus']; ?></td>
                                         <td>

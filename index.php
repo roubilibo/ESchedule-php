@@ -87,7 +87,7 @@ include 'fungsi/config.php'; ?>
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Nomor</th>
+                                <th>#</th>
                                 <th>Nama Mahasiswa</th>
                                 <th>NIM</th>
                                 <th>Kampus</th>
@@ -107,7 +107,7 @@ include 'fungsi/config.php'; ?>
                                     <td>
                                         <a href=""><strong><?= $no++; ?></strong></a>
                                     </td>
-                                    <td><?= $row['nama_lengkapmahasiswa']; ?></td>
+                                    <td class="text-capitalize"><?= $row['nama_lengkapmahasiswa']; ?></td>
                                     <td><?= $row['NIM']; ?></td>
                                     <td><?= $row['nama_kampus']; ?></td>
                                     <td><?= $row['nama_keahlian']; ?></td>

@@ -77,7 +77,10 @@ include 'fungsi/config.php'; ?>
             <div class="col-md-10 mx-auto">
                 <div class="card">
                     <div class="card-header">
-                        <span>Tambah Pengguna</span>
+                        <span>Tambah Keahlian Mahasiswa</span>
+                        <div class="float-right">
+                            <a href="admin-kmahasiswa.php" class="btn btn-sm btn-info">Kembali</a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <form method="POST">
