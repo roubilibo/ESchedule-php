@@ -1,3 +1,5 @@
+<?php
+include 'fungsi/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,8 +27,7 @@
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
         <div class="container">
             <a class="navbar-brand" href="index.php">ESchedule</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -35,8 +36,7 @@
                         <a class="nav-link" href="index.php">Index <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--1" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Manage </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage </a>
                         <div class="dropdown-menu" aria-labelledby="dropdown--1">
                             <a href="admin-kampus.php" class="dropdown-item">Kampus</a>
                             <a href="admin-keahlian.php" class="dropdown-item">Keahlian</a>
@@ -49,8 +49,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="dropdown--2" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false"><i class="fas fa-clipboard-list"></i>Laporan</a>
+                        <a href="#" class="nav-link dropdown-toggle" id="dropdown--2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-clipboard-list"></i>Laporan</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown--2">
                             <a href="admin-harian.php" class="dropdown-item">Harian</a>
                             <a href="admin-bulanan.php" class="dropdown-item">Bulanan</a>
@@ -63,8 +62,7 @@
                         <a href="register.php" class="nav-link">Register</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--3" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Admin</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown--3">
                             <a href="profile.php" class="dropdown-item">Profile</a>
                             <a href="#" class="dropdown-item">Logout</a>
@@ -82,28 +80,47 @@
                         <span>Tambah Pengguna</span>
                     </div>
                     <div class="card-body">
-                        <form action="">
-                            <div class="form-group">
+                        <form method="POST">
+                            <!-- <div class="form-group">
                                 <label for="">ID Mahasiswa</label>
                                 <input type="text" class="form-control" required autofocus>
                                 <small class="form-text text-danger">Harus Tahu ID Setiap Mahasiswa untuk Mengisi Form
                                     ini </small>
+                            </div> -->
+                            <div class="form-group">
+                                <label for="">Pilih Mahasiswa</label>
+                                <select name="id_mahasiswa" class="form-control">
+                                    <?php
+                                    $data = tampilMahasiswa();
+                                    ksort($data);
+                                    foreach ($data as $row) : ?>
+                                        <option value="<?= $row['id_mahasiswa']; ?>"><?= $row['nama_lengkapmahasiswa']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="">Keahlian</label>
-                                <select name="role" id="" class="form-control">
-                                    <option value="#id_keahlian">Front End</option>
-                                    <option value="#id_keahlian">Editor video</option>
-                                    <option value="#id_keahlian">Desain Grafis</option>
+                                <select name="id_keahlian" class="form-control">
+                                    <?php
+                                    $data = tampilKeahlian();
+                                    ksort($data);
+                                    foreach ($data as $row) : ?>
+                                        <option value="<?= $row['id_keahlian']; ?>"><?= $row['nama_keahlian']; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="">Nilai</label>
-                                <input type="text" class="form-control" required autofocus>
+                                <input type="text" class="form-control" name="nilai" required autofocus>
                                 <small class="form-text text-danger"></small>
                             </div>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="submit" name="btnsimpan" class="btn btn-primary">Simpan</button>
                         </form>
+                        <?php if (isset($_POST['btnsimpan'])) {
+                            postKmahasiswa($_POST);
+                            echo "<meta http-equiv='refresh' content='1.5;url=admin-kmahasiswa.php'>";
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

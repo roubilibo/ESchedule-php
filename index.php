@@ -88,8 +88,8 @@ include 'fungsi/config.php'; ?>
                         <thead>
                             <tr>
                                 <th>Nomor</th>
-                                <th>ID Magang</th>
                                 <th>Nama Mahasiswa</th>
+                                <th>NIM</th>
                                 <th>Kampus</th>
                                 <th>Keahlian</th>
                                 <th>Kelompok</th>
@@ -107,21 +107,19 @@ include 'fungsi/config.php'; ?>
                                     <td>
                                         <a href=""><strong><?= $no++; ?></strong></a>
                                     </td>
-                                    <td><?= $row['id_mahasiswa']; ?></td>
                                     <td><?= $row['nama_lengkapmahasiswa']; ?></td>
+                                    <td><?= $row['NIM']; ?></td>
                                     <td><?= $row['nama_kampus']; ?></td>
                                     <td><?= $row['nama_keahlian']; ?></td>
                                     <td><?= $row['nama_kelompok']; ?></td>
                                     <td><?= $row['tgl_mulai']; ?></td>
                                     <td><?= $row['nilai']; ?></td>
                                     <td>
-                                        <form action="#">
-                                            <a href="#">
-                                                <button class="btn btn-sm" type="submit" onclick="return confirm('Are You Sure?')">
-                                                    <i class="fas fa-trash text-danger"></i>
-                                                </button>
-                                            </a>
-                                        </form>
+                                        <a href="admin-hapus-mahasiswa.php?id_mahasiswa=<?php echo ($row['id_mahasiswa']); ?>">
+                                            <button class="btn btn-sm" type="submit" onclick="return confirm('Are You Sure?')">
+                                                <i class="fas fa-trash text-danger"></i>
+                                            </button>
+                                        </a>
                                     </td>
                                 </tr>
                             </tbody>

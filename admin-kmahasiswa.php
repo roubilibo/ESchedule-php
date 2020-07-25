@@ -124,7 +124,7 @@ include 'fungsi/config.php';
                                                     <i class="fas fa-edit text-info"></i>
                                                 </button>
                                             </a>
-                                            <a href="#">
+                                            <a href="admin-hapus-kmahasiswa.php?id_keahlianmahasiswa=<?php echo ($row['id_keahlianmahasiswa']); ?>">
                                                 <button class="btn btn-sm" type="submit" onclick="return confirm('Are You Sure?')">
                                                     <i class="fas fa-trash text-danger"></i>
                                                 </button>
