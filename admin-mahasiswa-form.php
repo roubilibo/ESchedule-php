@@ -84,23 +84,23 @@ include 'fungsi/config.php';
                         </div>
                     </div>
                     <div class="card-body">
-                        <form action="">
+                        <form method="POST" action="" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="">Nama Lengkap</label>
-                                <input type="text" class="form-control" required autofocus>
+                                <input type="text" class="form-control" name="nama_lengkapmahasiswa" required autofocus>
                                 <small class="form-text text-danger">Nama Harus Diisi.</small>
                             </div>
                             <div class="form-group">
                                 <label for="">Nama Panggilan</label>
-                                <input type="text" class="form-control" required autofocus>
+                                <input type="text" class="form-control" name="nama_panggilanmahasiswa" required autofocus>
                             </div>
                             <div class="form-group">
                                 <label for="">NIM</label>
-                                <input type="text" class="form-control" required autofocus>
+                                <input type="text" class="form-control" name="NIM" required autofocus>
                             </div>
                             <div class="form-group">
                                 <label for="">Nama Kampus</label>
-                                <select name="id_kampus" id="" class="form-control">
+                                <select name="id_kampus" class="form-control">
                                     <?php
                                     $no = 1;
                                     $data = tampilKampus();
@@ -112,52 +112,56 @@ include 'fungsi/config.php';
                             </div>
                             <div class="form-group">
                                 <label for="">Foto</label><br>
-                                <input type="file" name="photo" required>
+                                <input type="file" name="file_fotomahasiswa">
                                 <small class="form-text text-danger"></small>
                             </div>
                             <div class="form-group">
                                 <label for="">No. HP</label>
-                                <input type="text" class="form-control" required autofocus>
+                                <input type="text" class="form-control" name="no_hp" required autofocus>
                                 <small class="form-text text-danger">No. HP Harus Diisi.</small>
                             </div>
                             <div class="form-group">
                                 <label for="">E-mail</label>
-                                <input type="email" class="form-control" required>
+                                <input type="email" class="form-control" name="email" required>
                                 <small class="form-text text-danger">E-mail Harus Diisi.</small>
                             </div>
                             <div class="form-group">
                                 <label for="">Instagram</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" class="form-control" name="instagram" required>
                                 <small class="form-text text-danger"></small>
                             </div>
                             <div class="form-group">
                                 <label for="">Jurusan</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" class="form-control" name="jurusan_mahasiswa" required>
                                 <small class="form-text text-danger"></small>
                             </div>
                             <div class="form-group">
                                 <label for="">Nama Kelompok</label>
-                                <input type="text" class="form-control" required>
-                                <small class="form-text text-danger">Nama Kelompok Tidak Boleh Sama Dengan Kelompok
-                                    Lain</small>
+                                <input type="text" class="form-control" name="nama_kelompok" required>
+                                <small class="form-text text-danger"></small>
                             </div>
                             <div class="form-group">
                                 <label for="">tanggal Mulai Magang</label>
-                                <input type="date" class="form-control" required>
+                                <input type="date" class="form-control" name="tgl_mulai">
                                 <small class="form-text text-danger"></small>
                             </div>
                             <div class="form-group">
                                 <label for="">tanggal Selesai Magang</label>
-                                <input type="date" class="form-control" required>
+                                <input type="date" class="form-control" name="tgl_selesai">
                                 <small class="form-text text-danger"></small>
                             </div>
                             <div class="form-group">
                                 <label for="">File CV</label><br>
-                                <input type="file" name="cv" required>
+                                <input type="file" name="file_cv">
                                 <small class="form-text text-danger"></small>
                             </div>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="submit" class="btn btn-primary" name="btnsimpan">Simpan</button>
                         </form>
+                        <?php if (isset($_POST['btnsimpan'])) {
+                            postMahasiswa($_POST);
+                            echo "<meta http-equiv='refresh' content='1.5;url=index.php'>";
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

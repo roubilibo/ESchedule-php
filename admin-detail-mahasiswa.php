@@ -1,5 +1,6 @@
 <?php
-include 'fungsi/config.php'; ?>
+include 'fungsi/config.php';
+$rowMahasiswa = detailMahasiswa($_GET['id']); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,70 +75,38 @@ include 'fungsi/config.php'; ?>
     </nav>
 
     <main role="main" class="container">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <span><strong>Semua Mahasiswa Terdaftar </strong></span>
-                    <a href="admin-mahasiswa-form.php" class="btn btn-sm btn-secondary">Tambah</a>
-                    <span class="float-right">
-                        Urutkan Waktu <a href="#" class="badge badge-primary">Terbaru</a> | <a href="#" class="badge badge-primary">Terlama</a>
-                    </span>
-                </div>
-                <div class="card-body">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nama Mahasiswa</th>
-                                <th>NIM</th>
-                                <th>Kampus</th>
-                                <th>Keahlian</th>
-                                <th>Kelompok</th>
-                                <th>Masuk</th>
-                                <th>Nilai</th>
-                            </tr>
-                        </thead>
-                        <?php
-                        $no = 1;
-                        $data = tampilMahasiswa();
-                        ksort($data);
-                        foreach ($data as $row) : ?>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="col-md-4">
+                        <div class="card mt-3">
+                            <div class="card-body text-center">
+                                <img src="upload/profpic/<?= $rowMahasiswa['file_fotomahasiswa']; ?>" class="img-thumbnail">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>Nama Lengkap : <?= $rowMahasiswa['nama_lengkapmahasiswa']; ?></p>
+                        <p>Nama Panggilan : <?= $rowMahasiswa['nama_panggilanmahasiswa']; ?></p>
+                    </div>
+                    <div class="table-responsive-sm">
+                        <table class="table table-hover">
                             <tbody>
                                 <tr>
-                                    <td>
-                                        <a href="admin-detail-mahasiswa.php?id=<?= $row['id_mahasiswa'] ?>"><strong><?= $no++; ?></strong></a>
-                                    </td>
-                                    <td class="text-capitalize"><?= $row['nama_lengkapmahasiswa']; ?></td>
-                                    <td><?= $row['NIM']; ?></td>
-                                    <td><?= $row['nama_kampus']; ?></td>
-                                    <td><?= $row['nama_keahlian']; ?></td>
-                                    <td><?= $row['nama_kelompok']; ?></td>
-                                    <td><?= $row['tgl_mulai']; ?></td>
-                                    <td><?= $row['nilai']; ?></td>
-                                    <td>
-                                        <a href="admin-hapus-mahasiswa.php?id_mahasiswa=<?php echo ($row['id_mahasiswa']); ?>">
-                                            <button class="btn btn-sm" type="submit" onclick="return confirm('Are You Sure?')">
-                                                <i class="fas fa-trash text-danger"></i>
-                                            </button>
-                                        </a>
-                                    </td>
+                                    <td><strong>Nama Lengkap :</strong> <?= $rowMahasiswa['nama_lengkapmahasiswa']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Nama Panggilan :</strong> <?= $rowMahasiswa['nama_panggilanmahasiswa']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Nama Kampus :</strong> <?= $rowMahasiswa['nama_kampus']; ?></td>
                                 </tr>
                             </tbody>
-                        <?php endforeach; ?>
-                    </table>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-            </div>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </nav>
+        </div>
         </div>
         </div>
     </main>
