@@ -104,7 +104,7 @@ $result = mysqli_query($connect, $query);
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Nomor</th>
+                                <th>#</th>
                                 <th>Nama Mahasiswa</th>
                                 <th>NIM</th>
                                 <th>Kampus</th>
@@ -121,7 +121,7 @@ $result = mysqli_query($connect, $query);
                             <tbody>
                                 <tr>
                                     <td>
-                                        <a href="mahasiswa-detail.php"><strong><?= $no++; ?></strong></a>
+                                        <a href="admin-detail-mahasiswa.php?id=<?= $row['id_mahasiswa'] ?>"><strong><?= $no++; ?></strong></a>
                                     </td>
                                     <td class="capitalized"><?= $row['nama_lengkapmahasiswa']; ?></td>
                                     <td><?= $row['NIM']; ?></td>

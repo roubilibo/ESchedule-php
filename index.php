@@ -78,10 +78,9 @@ include 'fungsi/config.php'; ?>
             <div class="card">
                 <div class="card-header">
                     <span><strong>Semua Mahasiswa Terdaftar </strong></span>
-                    <a href="admin-mahasiswa-form.php" class="btn btn-sm btn-secondary">Tambah</a>
-                    <span class="float-right">
-                        Urutkan Waktu <a href="#" class="badge badge-primary">Terbaru</a> | <a href="#" class="badge badge-primary">Terlama</a>
-                    </span>
+                    <div class="float-right">
+                        <a href="admin-mahasiswa-form.php" class="btn btn-sm btn-info">Tambah</a>
+                    </div>
                 </div>
                 <div class="card-body">
                     <table class="table">

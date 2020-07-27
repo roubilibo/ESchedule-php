@@ -14,7 +14,7 @@ if (isset($_POST["from_date"], $_POST["to_date"])) {
         <table class="table">  
             <thead>
                 <tr>
-                <th>Nomor</th>
+                <th>#</th>
                 <th>Nama Mahasiswa</th>
                 <th>NIM</th>
                 <th>Kampus</th>
@@ -32,7 +32,7 @@ if (isset($_POST["from_date"], $_POST["to_date"])) {
             <tbody>
                 <tr>
                     <td>
-                        <a href="mahasiswa-detail.php"><strong>' . $no++ . '</strong></a>
+                        <a href="admin-detail-mahasiswa.php?id=' . $row['id_mahasiswa'] . '"><strong>' . $no++ . '</strong></a>
                     </td>
                     <td class="capitalized">' . $row['nama_lengkapmahasiswa'] . '</td>
                     <td>' . $row['NIM'] . '</td>

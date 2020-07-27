@@ -78,31 +78,52 @@ $rowMahasiswa = detailMahasiswa($_GET['id']); ?>
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-3">
-                    <div class="col-md-4">
-                        <div class="card mt-3">
-                            <div class="card-body text-center">
-                                <img src="upload/profpic/<?= $rowMahasiswa['file_fotomahasiswa']; ?>" class="img-thumbnail">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <img src="upload/profpic/<?= $rowMahasiswa['file_fotomahasiswa']; ?>" class="img-thumbnail">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <p>Nama Lengkap : <?= $rowMahasiswa['nama_lengkapmahasiswa']; ?></p>
-                        <p>Nama Panggilan : <?= $rowMahasiswa['nama_panggilanmahasiswa']; ?></p>
-                    </div>
-                    <div class="table-responsive-sm">
-                        <table class="table table-hover">
-                            <tbody>
-                                <tr>
-                                    <td><strong>Nama Lengkap :</strong> <?= $rowMahasiswa['nama_lengkapmahasiswa']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Nama Panggilan :</strong> <?= $rowMahasiswa['nama_panggilanmahasiswa']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Nama Kampus :</strong> <?= $rowMahasiswa['nama_kampus']; ?></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="col-md-8">
+                            <div class="table-responsive-sm">
+                                <table class="table table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Nama Lengkap :</strong> <?= $rowMahasiswa['nama_lengkapmahasiswa']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Nama Panggilan :</strong> <?= $rowMahasiswa['nama_panggilanmahasiswa']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Nama Kampus :</strong> <?= $rowMahasiswa['nama_kampus']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Jurusan :</strong> <?= $rowMahasiswa['jurusan_mahasiswa']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>NIM :</strong> <?= $rowMahasiswa['NIM']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>E-mail :</strong> <?= $rowMahasiswa['email']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Instagram :</strong> <?= $rowMahasiswa['instagram']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>No Handphone :</strong> <?= $rowMahasiswa['no_hp']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Keahlian :</strong> <?= $rowMahasiswa['nama_keahlian']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Nilai :</strong> <?= $rowMahasiswa['nilai']; ?></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
