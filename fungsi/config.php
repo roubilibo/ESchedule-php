@@ -15,3 +15,4 @@ include 'fungsi-keahlian.php';
 include 'fungsi-kampus.php';
 include 'fungsi-kmahasiswa.php';
 include 'fungsi-mahasiswa.php';
+include 'fungsi-harian.php';

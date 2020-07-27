@@ -63,10 +63,11 @@ function hapusMahasiswa($id_mahasiswa)
     global $conn;
 
     $query = "DELETE FROM tbl_mahasiswa WHERE id_mahasiswa = '$id_mahasiswa'";
+    mysqli_query($conn, $query);
     // menghapus data dari database
-    if (mysqli_query($conn, $query)) {
-        echo "<div class='alert alert-success'>Data Berhasil dihapus</div>";
-    }
+    // if (mysqli_query($conn, $query)) {
+    //     echo "<div class='alert alert-success'>Data Berhasil dihapus</div>";
+    // }
     // mengalihkan halaman kembali ke index.php
     // header("location:admin-keahlian.php");
 }
@@ -75,10 +76,10 @@ function hapusMahasiswaKeahlian($id_mahasiswa)
     global $conn;
 
     $query = "DELETE FROM tbl_keahlianmahasiswa WHERE id_mahasiswa = '$id_mahasiswa'";
-
-    if (mysqli_query($conn, $query)) {
-        echo "--------------------------------------------------------------";
-    }
+    mysqli_query($conn, $query);
+    // if (mysqli_query($conn, $query)) {
+    //     echo "--------------------------------------------------------------";
+    // }
 }
 function cekKeahlian($id_mahasiswa)
 {

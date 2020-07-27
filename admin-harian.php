@@ -1,3 +1,8 @@
+<?php
+$connect = mysqli_connect("localhost", "root", "", "penjadwalanpkl");
+$query = "SELECT mhs.id_mahasiswa,mhs.id_kampus,mhs.nama_lengkapmahasiswa,mhs.NIM,mhs.nama_kelompok,mhs.tgl_mulai,mhs.tgl_selesai,kmh.id_keahlian,kmh.nilai,kh.nama_keahlian,kps.nama_kampus FROM ((tbl_mahasiswa mhs LEFT JOIN tbl_keahlianmahasiswa kmh ON mhs.id_mahasiswa = kmh.id_mahasiswa) LEFT JOIN tbl_keahlian kh ON kmh.id_keahlian = kh.id_keahlian) LEFT JOIN tbl_kampus kps ON mhs.id_kampus = kps.id_kampus ORDER BY id_mahasiswa asc";
+$result = mysqli_query($connect, $query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +23,7 @@
     <link rel="stylesheet" href="assets/css/app.css">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="assets/libs/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 </head>
 
@@ -78,80 +84,57 @@
                     <span><strong>Semua Mahasiswa Terdaftar </strong></span>
                     <a href="admin-mahasiswa-form.php" class="btn btn-sm btn-secondary">Tambah</a>
                     <span class="float-right">
-                        <form action="#">
-                            <div class="input-group">
-                                <input type="date" name="keyword" class="form-control form-control-sm text-center" placeholder="Cari">
-                                <div class="input-group-append">
-                                    <button class="btn btn-info btn-sm" type="submit">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-info btn-sm">
-                                        <i class="fas fa-eraser"></i>
-                                    </a>
-                                </div>
+                        <!-- <form method=""> -->
+                        <div class="input-group">
+                            <input type="text" name="from_date" id="from_date" class="form-control form-control-sm text-center" placeholder="Dari">
+                            <input type="text" name="to_date" id="to_date" class="form-control form-control-sm text-center" placeholder="Cari">
+                            <div class="input-group-append">
+                                <button class="btn btn-info btn-sm" type="submit" name="search" id="search">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <a href="#" class="btn btn-info btn-sm">
+                                    <i class="fas fa-eraser"></i>
+                                </a>
                             </div>
-                        </form>
+                        </div>
+                        <!-- </form> -->
                     </span>
                 </div>
-                <div class="card-body">
+                <div class="card-body" id="order_table">
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>Nomor</th>
-                                <th>ID Magang</th>
                                 <th>Nama Mahasiswa</th>
+                                <th>NIM</th>
                                 <th>Kampus</th>
                                 <th>Keahlian</th>
+                                <th>Kelompok</th>
                                 <th>Masuk</th>
-                                <th>Keluar</th>
+                                <th>Nilai</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <a href="mahasiswa-detail.php"><strong>1</strong></a>
-                                </td>
-                                <td>#</td>
-                                <td>M. Roubil Ridlo</td>
-                                <td>UIN Malang </td>
-                                <td>Front End</td>
-                                <td>1 juli 2020</td>
-                                <td>31 juli 2020</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="mahasiswa-detail.php"><strong>2</strong></a>
-                                </td>
-                                <td>#</td>
-                                <td>M. Roubil Ridlo</td>
-                                <td>UIN Malang </td>
-                                <td>Front End</td>
-                                <td>1 juli 2020</td>
-                                <td>31 juli 2020</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="mahasiswa-detail.php"><strong>3</strong></a>
-                                </td>
-                                <td>#</td>
-                                <td>M. Roubil Ridlo</td>
-                                <td>UIN Malang </td>
-                                <td>Front End</td>
-                                <td>1 juli 2020</td>
-                                <td>31 juli 2020</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="mahasiswa-detail.php"><strong>4</strong></a>
-                                </td>
-                                <td>#</td>
-                                <td>M. Roubil Ridlo</td>
-                                <td>UIN Malang </td>
-                                <td>Front End</td>
-                                <td>1 juli 2020</td>
-                                <td>31 juli 2020</td>
-                            </tr>
-                        </tbody>
+                        <?php
+                        $no = 1;
+                        while ($row = mysqli_fetch_array($result)) {
+                        ?>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="mahasiswa-detail.php"><strong><?= $no++; ?></strong></a>
+                                    </td>
+                                    <td class="capitalized"><?= $row['nama_lengkapmahasiswa']; ?></td>
+                                    <td><?= $row['NIM']; ?></td>
+                                    <td><?= $row['nama_kampus']; ?></td>
+                                    <td><?= $row['nama_keahlian']; ?></td>
+                                    <td><?= $row['nama_kelompok']; ?></td>
+                                    <td><?= $row['tgl_mulai']; ?></td>
+                                    <td><?= $row['nilai']; ?></td>
+                                </tr>
+                            </tbody>
+                        <?php
+                        }
+                        ?>
                     </table>
                 </div>
             </div>
@@ -171,6 +154,40 @@
     </main>
     <script src="assets/libs/jquery/jquery-3.5.1.min.js"></script>
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
 </body>
 
 </html>
+<script>
+    $(document).ready(function() {
+        $.datepicker.setDefaults({
+            dateFormat: 'yy-mm-dd'
+        });
+        $(function() {
+            $("#from_date").datepicker();
+            $("#to_date").datepicker();
+        });
+        $('#search').click(function() {
+            var from_date = $('#from_date').val();
+            var to_date = $('#to_date').val();
+            if (from_date != '' && to_date != '') {
+                $.ajax({
+                    url: "fungsi/fungsi-harian.php",
+                    method: "POST",
+                    data: {
+                        from_date: from_date,
+                        to_date: to_date
+                    },
+                    success: function(data) {
+                        $('#order_table').html(data);
+                    }
+                });
+            } else {
+                alert("Please Select Date");
+            }
+        });
+    });
+</script>
