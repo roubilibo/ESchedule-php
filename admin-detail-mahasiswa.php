@@ -28,7 +28,8 @@ $rowMahasiswa = detailMahasiswa($_GET['id']); ?>
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
         <div class="container">
             <a class="navbar-brand" href="index.php">ESchedule</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -37,7 +38,8 @@ $rowMahasiswa = detailMahasiswa($_GET['id']); ?>
                         <a class="nav-link" href="index.php">Index <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--1" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Manage </a>
                         <div class="dropdown-menu" aria-labelledby="dropdown--1">
                             <a href="admin-kampus.php" class="dropdown-item">Kampus</a>
                             <a href="admin-keahlian.php" class="dropdown-item">Keahlian</a>
@@ -50,7 +52,8 @@ $rowMahasiswa = detailMahasiswa($_GET['id']); ?>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="dropdown--2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-clipboard-list"></i>Laporan</a>
+                        <a href="#" class="nav-link dropdown-toggle" id="dropdown--2" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><i class="fas fa-clipboard-list"></i>Laporan</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown--2">
                             <a href="admin-harian.php" class="dropdown-item">Harian</a>
                             <a href="admin-bulanan.php" class="dropdown-item">Bulanan</a>
@@ -63,7 +66,8 @@ $rowMahasiswa = detailMahasiswa($_GET['id']); ?>
                         <a href="register.php" class="nav-link">Register</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown--3" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Admin</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown--3">
                             <a href="profile.php" class="dropdown-item">Profile</a>
                             <a href="#" class="dropdown-item">Logout</a>
@@ -82,7 +86,8 @@ $rowMahasiswa = detailMahasiswa($_GET['id']); ?>
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <img src="upload/profpic/<?= $rowMahasiswa['file_fotomahasiswa']; ?>" class="img-thumbnail">
+                                    <img src="upload/profpic/<?php echo $rowMahasiswa['file_fotomahasiswa']; ?>"
+                                        class="img-thumbnail">
                                 </div>
                             </div>
                         </div>
@@ -91,34 +96,42 @@ $rowMahasiswa = detailMahasiswa($_GET['id']); ?>
                                 <table class="table table-hover">
                                     <tbody>
                                         <tr>
-                                            <td><strong>Nama Lengkap :</strong> <?= $rowMahasiswa['nama_lengkapmahasiswa']; ?></td>
+                                            <td><strong>Nama Lengkap :</strong>
+                                                <?php echo $rowMahasiswa['nama_lengkapmahasiswa']; ?></td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Nama Panggilan :</strong> <?= $rowMahasiswa['nama_panggilanmahasiswa']; ?></td>
+                                            <td><strong>Nama Panggilan :</strong>
+                                                <?php echo $rowMahasiswa['nama_panggilanmahasiswa']; ?></td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Nama Kampus :</strong> <?= $rowMahasiswa['nama_kampus']; ?></td>
+                                            <td><strong>Nama Kampus :</strong>
+                                                <?php echo $rowMahasiswa['nama_kampus']; ?></td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Jurusan :</strong> <?= $rowMahasiswa['jurusan_mahasiswa']; ?></td>
+                                            <td><strong>Jurusan :</strong>
+                                                <?php echo $rowMahasiswa['jurusan_mahasiswa']; ?>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td><strong>NIM :</strong> <?= $rowMahasiswa['NIM']; ?></td>
+                                            <td><strong>NIM :</strong> <?php echo $rowMahasiswa['NIM']; ?></td>
                                         </tr>
                                         <tr>
-                                            <td><strong>E-mail :</strong> <?= $rowMahasiswa['email']; ?></td>
+                                            <td><strong>E-mail :</strong> <?php echo $rowMahasiswa['email']; ?></td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Instagram :</strong> <?= $rowMahasiswa['instagram']; ?></td>
+                                            <td><strong>Instagram :</strong> <?php echo $rowMahasiswa['instagram']; ?>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td><strong>No Handphone :</strong> <?= $rowMahasiswa['no_hp']; ?></td>
+                                            <td><strong>No Handphone :</strong> <?php echo $rowMahasiswa['no_hp']; ?>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Keahlian :</strong> <?= $rowMahasiswa['nama_keahlian']; ?></td>
+                                            <td><strong>Keahlian :</strong>
+                                                <?php echo $rowMahasiswa['nama_keahlian']; ?></td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Nilai :</strong> <?= $rowMahasiswa['nilai']; ?></td>
+                                            <td><strong>Nilai :</strong> <?php echo $rowMahasiswa['nilai']; ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
