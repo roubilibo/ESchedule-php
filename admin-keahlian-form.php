@@ -44,6 +44,7 @@ include 'fungsi/config.php';
                             <a href="admin-kampus.php" class="dropdown-item">Kampus</a>
                             <a href="admin-keahlian.php" class="dropdown-item">Keahlian</a>
                             <a href="admin-kmahasiswa.php" class="dropdown-item">Keahlian Mahasiswa</a>
+                            <a href="admin-mahasiswa.php" class="dropdown-item">Mahasiswa</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -98,9 +99,9 @@ include 'fungsi/config.php';
                         </form>
                         <br>
                         <?php if (isset($_POST['btnsimpan'])) {
-    postKeahlian($_POST);
-    echo "<meta http-equiv='refresh' content='1.5;url=admin-keahlian.php'>";
-}
+                            postKeahlian($_POST);
+                            echo "<meta http-equiv='refresh' content='1.5;url=admin-keahlian.php'>";
+                        }
                         ?>
                     </div>
                 </div>

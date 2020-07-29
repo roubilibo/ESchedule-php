@@ -43,6 +43,7 @@ include 'fungsi/config.php'; ?>
                             <a href="admin-kampus.php" class="dropdown-item">Kampus</a>
                             <a href="admin-keahlian.php" class="dropdown-item">Keahlian</a>
                             <a href="admin-kmahasiswa.php" class="dropdown-item">Keahlian Mahasiswa</a>
+                            <a href="admin-mahasiswa.php" class="dropdown-item">Mahasiswa</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -82,9 +83,6 @@ include 'fungsi/config.php'; ?>
             <div class="card">
                 <div class="card-header">
                     <span><strong>Semua Mahasiswa Terdaftar </strong></span>
-                    <div class="float-right">
-                        <a href="admin-mahasiswa-form.php" class="btn btn-sm btn-info">Tambah</a>
-                    </div>
                 </div>
                 <div class="card-body">
                     <table class="table">

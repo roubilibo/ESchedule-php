@@ -1,6 +1,5 @@
 <?php
-include 'fungsi/config.php';
-?>
+include 'fungsi/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +20,6 @@ include 'fungsi/config.php';
     <link rel="stylesheet" href="assets/css/app.css">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="assets/libs/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 </head>
 
@@ -45,6 +43,7 @@ include 'fungsi/config.php';
                             <a href="admin-kampus.php" class="dropdown-item">Kampus</a>
                             <a href="admin-keahlian.php" class="dropdown-item">Keahlian</a>
                             <a href="admin-kmahasiswa.php" class="dropdown-item">Keahlian Mahasiswa</a>
+                            <a href="admin-mahasiswa.php" class="dropdown-item">Mahasiswa</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -84,25 +83,11 @@ include 'fungsi/config.php';
             <div class="card">
                 <div class="card-header">
                     <span><strong>Semua Mahasiswa Terdaftar </strong></span>
-                    <a href="admin-mahasiswa-form.php" class="btn btn-sm btn-secondary">Tambah</a>
-                    <span class="float-right">
-                        <form method="post">
-                            <div class="input-group">
-                                <input type="text" name="keyword" id="from_date"
-                                    class="form-control form-control-sm text-center" placeholder="Dari">
-                                <div class="input-group-append">
-                                    <button class="btn btn-info btn-sm" type="submit" name="search" id="search">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-info btn-sm">
-                                        <i class="fas fa-eraser"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </form>
-                    </span>
+                    <div class="float-right">
+                        <a href="admin-mahasiswa-form.php" class="btn btn-sm btn-info">Tambah</a>
+                    </div>
                 </div>
-                <div class="card-body" id="order_table">
+                <div class="card-body">
                     <table class="table">
                         <thead>
                             <tr>
@@ -113,6 +98,7 @@ include 'fungsi/config.php';
                                 <th>Keahlian</th>
                                 <th>Kelompok</th>
                                 <th>Masuk</th>
+                                <th>Selesai</th>
                                 <th>Nilai</th>
                             </tr>
                         </thead>
@@ -127,18 +113,26 @@ include 'fungsi/config.php';
                                     <a
                                         href="admin-detail-mahasiswa.php?id=<?php echo $row['id_mahasiswa']; ?>"><strong><?php echo $no++; ?></strong></a>
                                 </td>
-                                <td class="capitalized"><?php echo $row['nama_lengkapmahasiswa']; ?></td>
+                                <td class="text-capitalize"><?php echo $row['nama_lengkapmahasiswa']; ?></td>
                                 <td><?php echo $row['NIM']; ?></td>
                                 <td><?php echo $row['nama_kampus']; ?></td>
                                 <td><?php echo $row['nama_keahlian']; ?></td>
                                 <td><?php echo $row['nama_kelompok']; ?></td>
                                 <td><?php echo $row['tgl_mulai']; ?></td>
+                                <td><?php echo $row['tgl_mulai']; ?></td>
                                 <td><?php echo $row['nilai']; ?></td>
+                                <td>
+                                    <a
+                                        href="admin-hapus-mahasiswa.php?id_mahasiswa=<?php echo $row['id_mahasiswa']; ?>">
+                                        <button class="btn btn-sm" type="submit"
+                                            onclick="return confirm('Are You Sure?')">
+                                            <i class="fas fa-trash text-danger"></i>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
-                        <?php
-                        }
-                        ?>
+                        <?php } ?>
                     </table>
                 </div>
             </div>
@@ -158,10 +152,6 @@ include 'fungsi/config.php';
     </main>
     <script src="assets/libs/jquery/jquery-3.5.1.min.js"></script>
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-
 </body>
 
 </html>

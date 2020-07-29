@@ -44,6 +44,7 @@ $rowMahasiswa = detailMahasiswa($_GET['id']); ?>
                             <a href="admin-kampus.php" class="dropdown-item">Kampus</a>
                             <a href="admin-keahlian.php" class="dropdown-item">Keahlian</a>
                             <a href="admin-kmahasiswa.php" class="dropdown-item">Keahlian Mahasiswa</a>
+                            <a href="admin-mahasiswa.php" class="dropdown-item">Mahasiswa</a>
                         </div>
                     </li>
                     <li class="nav-item">
