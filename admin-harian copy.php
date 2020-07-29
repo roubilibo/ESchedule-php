@@ -1,6 +1,5 @@
 <?php
 include 'fungsi/config.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +21,7 @@ include 'fungsi/config.php';
     <link rel="stylesheet" href="assets/css/app.css">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="assets/libs/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 </head>
 
@@ -86,11 +86,12 @@ include 'fungsi/config.php';
                     <span><strong>Semua Mahasiswa Terdaftar </strong></span>
                     <a href="admin-mahasiswa-form.php" class="btn btn-sm btn-secondary">Tambah</a>
                     <span class="float-right">
-                        <form action="" method="POST">
+                        <form method="post">
                             <div class="input-group">
-                                <input type="date" name="tgl_mulai" class="form-control form-control-sm text-center">
+                                <input type="text" name="keyword" id="from_date"
+                                    class="form-control form-control-sm text-center" placeholder="Dari">
                                 <div class="input-group-append">
-                                    <button class="btn btn-info btn-sm" type="submit" name="btncari">
+                                    <button class="btn btn-info btn-sm" type="submit" name="search" id="search">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <a href="#" class="btn btn-info btn-sm">
@@ -99,12 +100,6 @@ include 'fungsi/config.php';
                                 </div>
                             </div>
                         </form>
-                        <?php
-                        $data = tampilMahasiswa();
-                        if (isset($_POST["btncari"])) {
-                            $data = tampilHarian($_POST["tgl_mulai"]);
-                        }
-                        ?>
                     </span>
                 </div>
                 <div class="card-body" id="order_table">
@@ -123,6 +118,7 @@ include 'fungsi/config.php';
                         </thead>
                         <?php
                         $no = 1;
+                        $data = tampilMahasiswa();
                         ksort($data);
                         foreach ($data as $row) { ?>
                         <tbody>
@@ -162,6 +158,10 @@ include 'fungsi/config.php';
     </main>
     <script src="assets/libs/jquery/jquery-3.5.1.min.js"></script>
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
 </body>
 
 </html>
