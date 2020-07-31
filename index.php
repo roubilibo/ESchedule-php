@@ -82,7 +82,7 @@ include 'fungsi/config.php'; ?>
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <span><strong>Semua Mahasiswa Terdaftar </strong></span>
+                    <span><strong>Mahasiswa Magang Aktif </strong></span>
                 </div>
                 <div class="card-body">
                     <table class="table">
