@@ -1,2 +1,2 @@
 # ESchedule
- Tugas Magang Membuat Jadwal Magang
+ Tugas Magang Membuat Jadwal Peserta Magang
